@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    image: pelegb/wog
+    ports:
+      - "5000:5000"
+    volumes:
+        - .:/wog
