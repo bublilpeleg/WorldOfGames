@@ -4,6 +4,6 @@ services:
     build: .
     image: pelegb/wog
     ports:
-      - "5000:5000"
+      - "8777:8777"
     volumes:
         - .:/wog
