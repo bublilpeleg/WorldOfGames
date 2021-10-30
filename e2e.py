@@ -2,6 +2,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome(
     executable_path="/home/pelegb/Desktop/pythonProject/Lesson2/Selenium/chromedriver_linux64/chromedriver")
+    executable_path="/home/pelegb/Desktop/pythonProject/Lesson2/Selenium/chromedriver_linux64/chromedriver")
 
 
 def test_scores_service(url):
