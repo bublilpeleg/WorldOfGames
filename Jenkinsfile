@@ -11,7 +11,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                sh 'docker build -t world_of_games /tmp/workspace/world_of_games_pipeline'
+                sh 'docker build -t world_of_games .'
             }
         }
         stage ('dummy score.txt') {
