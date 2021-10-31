@@ -5,10 +5,14 @@ pipeline {
         }
     stages {
         stage('checkout_repo') {
-            git branch: 'main', url: 'https://github.com/bublilpeleg/WorldOfGames.git'
+            steps {
+                git branch: 'main', url: 'https://github.com/bublilpeleg/WorldOfGames.git'
+            }
         }
         stage('build docker image') {
-            sh 'docker build -t world_of_games .'
+            steps {
+                sh 'docker build -t world_of_games .'
+            }
         }
         stage ('dummy score.txt') {
             steps {
