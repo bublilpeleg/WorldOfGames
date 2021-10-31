@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
+        }
     stages {
         stage('checkout_repo') {
             steps {
@@ -11,9 +13,6 @@ pipeline {
             steps {
                 sh 'docker build -t world_of_games'
             }
-        }
-        environment {
-            DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
         }
         stage ('dummy score.txt') {
             steps {
