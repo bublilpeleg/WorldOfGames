@@ -1,8 +1,9 @@
 pipeline {
     agent any
-//     environment {
-//         DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
-//         }
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
+        dockerImage = ''
+        }
     stages {
         stage('checkout_repo') {
             steps {
@@ -11,7 +12,9 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                sh 'docker build -t world_of_games .'
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
         stage ('dummy score.txt') {
@@ -21,7 +24,7 @@ pipeline {
         }
         stage('run & expose docker image') {
             steps {
-                sh 'docker run -p 8777:5000 world_of_games'
+                sh 'docker run -p 8777:5000 ":$BUILD_NUMBER"'
             }
         }
         stage('run test python script ') {
@@ -34,16 +37,16 @@ pipeline {
                 sh 'docker rm -f world_of_games'
             }
         }
-//         stage('Login') {
-//             steps {
-//                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-//             }
-//         }
-//         stage('Push') {
-//             steps {
-//                 sh 'docker push pelegb999/world_of_games:latest'
-//                 sh 'docker logout'
-//             }
-//         }
+        stage('Login') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Push') {
+            steps {
+                sh 'docker push pelegb999/world_of_games:latest'
+                sh 'docker logout'
+            }
+        }
     }
 }
