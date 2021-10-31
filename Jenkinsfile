@@ -11,8 +11,8 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                sh 'cat pwd'
-                sh 'cat ls'
+                sh 'pwd'
+                sh 'ls'
             }
         }
         stage ('dummy score.txt') {
