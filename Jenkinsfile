@@ -11,6 +11,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
+                sh 'ls'
                 sh 'docker build -t world_of_games/worldofgames .'
             }
         }
