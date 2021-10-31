@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    environment {
-        DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
-        }
+//     environment {
+//         DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
+//         }
     stages {
         stage('checkout_repo') {
             steps {
@@ -34,16 +34,16 @@ pipeline {
                 sh 'docker rm -f world_of_games'
             }
         }
-        stage('Login') {
-            steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
-        stage('Push') {
-            steps {
-                sh 'docker push pelegb999/world_of_games:latest'
-                sh 'docker logout'
-            }
-        }
+//         stage('Login') {
+//             steps {
+//                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+//             }
+//         }
+//         stage('Push') {
+//             steps {
+//                 sh 'docker push pelegb999/world_of_games:latest'
+//                 sh 'docker logout'
+//             }
+//         }
     }
 }
