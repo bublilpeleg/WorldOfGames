@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
-        dockerImage=''
-        registry = 'pelegb999/world_of_games'
+//         dockerImage=''
+//         registry = 'pelegb999/world_of_games'
         }
     stages {
         stage('checkout_repo') {
@@ -13,9 +13,7 @@ pipeline {
         }
         stage('build docker image') {
             steps {
-                script {
-                    dockerImage = docker.build registry
-                }
+                sh 'docker build -t world_of_games'
             }
         }
         stage ('dummy score.txt') {
