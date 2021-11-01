@@ -14,11 +14,13 @@ pipeline {
         stage('build docker-compose') {
             steps {
                 sh 'docker-compose build'
+                sh 'cat Scores.txt'
             }
         }
         stage ('dummy score.txt') {
             steps {
                 sh 'echo 50 > Scores.txt'
+                sh 'cat Scores.txt'
             }
         }
         stage('run docker-compose') {
@@ -34,6 +36,7 @@ pipeline {
         stage('terminate and push') {
             steps {
                 sh 'docker-compose down'
+                sh 'cat Scores.txt'
             }
         }
         stage('Login') {
