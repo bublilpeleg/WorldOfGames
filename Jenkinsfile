@@ -28,7 +28,7 @@ pipeline {
         }
         stage('run test python script ') {
             steps {
-                sh 'python3.8 e2e.py'
+                sh 'ls'
             }
         }
         stage('terminate and push') {
