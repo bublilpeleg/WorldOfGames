@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: .
-    image: pelegb/wog
+    image: worldofgames
     ports:
       - "8777:5000"
     volumes:

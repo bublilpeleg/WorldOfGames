@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('peleg-docker-hub')
 //         dockerImage=''
 //         registry = 'pelegb999/world_of_games'
         }
@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker push pelegb999/world_of_games:latest'
+                sh 'docker push pelegb999/worldofgames:latest'
                 sh 'docker logout'
             }
         }
