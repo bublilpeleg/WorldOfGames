@@ -43,7 +43,8 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker push pelegb999/worldofgames:latest'
+                sh 'docker tag worldofgames pelegb999/worldofgames'
+                sh 'docker push /worldofgames:latest'
                 sh 'docker logout'
             }
         }
