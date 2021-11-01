@@ -11,9 +11,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/bublilpeleg/WorldOfGames.git'
             }
         }
-        stage('build docker image') {
+        stage('build docker-compose') {
             steps {
-                sh 'docker build -t world_of_games .'
+                sh 'docker-compose build'
             }
         }
         stage ('dummy score.txt') {
@@ -21,9 +21,9 @@ pipeline {
                 sh 'echo 50 > Scores.txt'
             }
         }
-        stage('run & expose docker image') {
+        stage('run docker-compose') {
             steps {
-                sh 'docker run -p 8777:5000 world_of_games'
+                sh 'docker-compose up -d'
             }
         }
         stage('run test python script ') {
@@ -33,7 +33,7 @@ pipeline {
         }
         stage('terminate and push') {
             steps {
-                sh 'docker rm -f world_of_games'
+                sh 'docker-compose down'
             }
         }
 //         stage('Login') {
