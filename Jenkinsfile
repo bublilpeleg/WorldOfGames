@@ -34,7 +34,6 @@ pipeline {
         stage('terminate and push') {
             steps {
                 sh 'docker-compose down'
-                sh 'cat Scores.txt'
             }
         }
         stage('Login') {
