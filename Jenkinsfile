@@ -44,7 +44,7 @@ pipeline {
         stage('Push') {
             steps {
                 sh 'docker tag worldofgames pelegb999/worldofgames'
-                sh 'docker push /worldofgames:latest'
+                sh 'docker push devops/worldofgames:latest'
                 sh 'docker logout'
             }
         }
