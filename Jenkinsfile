@@ -4,7 +4,7 @@ pipeline {
 //         DOCKERHUB_CREDENTIALS = credentials('pelegb999-dockerhub')
 //         dockerImage=''
 //         registry = 'pelegb999/world_of_games'
-        }
+//         }
     stages {
         stage('checkout_repo') {
             steps {
