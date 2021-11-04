@@ -2,8 +2,6 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('peleg-docker-hub')
-//         dockerImage=''
-//         registry = 'pelegb999/world_of_games'
         }
     stages {
         stage('checkout_repo') {
