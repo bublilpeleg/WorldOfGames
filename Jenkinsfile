@@ -17,6 +17,7 @@ pipeline {
         stage ('dummy score.txt') {
             steps {
                 sh 'echo 50 > Scores.txt'
+                sh 'cat Scores.txt'
             }
         }
         stage('run docker-compose') {
@@ -27,6 +28,7 @@ pipeline {
         stage('run test python script ') {
             steps {
                 sh 'python3.8 e2e.py'
+                sh 'pip list'
             }
         }
         stage('terminate and push') {
