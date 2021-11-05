@@ -31,11 +31,11 @@ pipeline {
                 sh 'python3.8 e2e.py'
             }
         }
-        stage('terminate and push') {
-            steps {
-                sh 'docker-compose down'
-            }
-        }
+//         stage('terminate and push') {
+//             steps {
+//                 sh 'docker-compose down'
+//             }
+//         }
 //         stage('Login') {
 //             steps {
 //                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
