@@ -1,7 +1,10 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
-driver = webdriver.Chrome(
-    executable_path="/app/chromedriver_linux64/chromedriver")
+s=Service("/app/chromedriver_linux64/chromedriver")
+driver = webdriver.Chrome(service=s)
+
+# driver = webdriver.Chrome(executable_path="/app/chromedriver_linux64/chromedriver")
 
 
 def test_scores_service(url):
