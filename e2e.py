@@ -16,7 +16,7 @@ from selenium.webdriver.common.by import By
 #     return int(my_url) in range(1, 100)
 def test_scores_service():
     svc = Service(ChromeDriverManager().install())
-    svc = Service("/app/chromedriver_linux64/chromedriver")
+    # svc = Service("/app/chromedriver_linux64/chromedriver")
     my_driver = webdriver.Chrome(service=svc)
     my_driver.maximize_window()
     my_driver.get("http://127.0.0.1:8777/")
