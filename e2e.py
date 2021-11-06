@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 # s=Service("/app/chromedriver_linux64/chromedriver")
 # driver = webdriver.Chrome(service=s)
 
-my_driver = webdriver.Chrome(executable_path="/app/chromedriver_linux64/chromedriver")
+my_driver = webdriver.Chrome(executable_path="/chromedriver_linux64/chromedriver")
 
 
 # def test_scores_service(url):
