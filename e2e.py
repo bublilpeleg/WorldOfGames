@@ -21,7 +21,7 @@ def test_scores_service():
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument('--no-sandbox')
-    my_driver = webdriver.Chrome('/chromedriver_linux64/chromedriver', options=chrome_options)
+    my_driver = webdriver.Chrome('/app/chromedriver_linux64/chromedriver', options=chrome_options)
     # driver.get('http://www.google.com')
     print('test')
     # s = Service(ChromeDriverManager().install())
