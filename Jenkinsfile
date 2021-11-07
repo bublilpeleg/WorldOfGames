@@ -30,7 +30,7 @@ pipeline {
 //                 sh 'python3.8 e2e.py'
 //             }
 //         }
-//         stage('terminate and push') {
+//         stage('terminate and pushing') {
 //             steps {
 //                 sh 'docker-compose down'
 //             }
