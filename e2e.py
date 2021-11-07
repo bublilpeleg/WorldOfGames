@@ -10,7 +10,7 @@ from selenium.webdriver.chrome.options import Options
 # s=Service("/app/chromedriver_linux64/chromedriver")
 # driver = webdriver.Chrome(service=s)
 
-my_driver = webdriver.Chrome(executable_path="/home/pelegb/Desktop/pythonProject/Lessons/Final Project/chromedriver_linux64/chromedriver")
+my_driver = webdriver.Chrome(executable_path="/app/chromedriver_linux64/chromedriver")
 
 
 # def test_scores_service(url):
